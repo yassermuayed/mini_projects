@@ -39,13 +39,16 @@ hr{
 }
 
 /* laps  */
+.scroll{
+    overflow-y: scroll;
+}
 .laps-cont {
     display: flex;
     flex-direction: column-reverse;
     justify-content:flex-end ;
     height: 300px;
     
-    overflow-y: scroll;
+    
     
 }
 
