@@ -32,6 +32,14 @@ const projects = [
         path: '4-calculator/index.html',
         github: 'https://github.com/yassermuayed/fundamentals/tree/master/4-calculator'
     },
+    {
+        id: 5,
+        title: 'Analog Clock',
+        description: 'Analog clock which allows controlling time passing speed.',
+        image: '5-analog-clock/Screenshot.png',
+        path: '5-analog-clock/index.html',
+        github: 'https://github.com/yassermuayed/fundamentals/tree/master/5-analog-clock'
+    },
 ]
 
 projects.forEach(el => createProject(el))
