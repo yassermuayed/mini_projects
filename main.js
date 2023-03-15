@@ -3,7 +3,7 @@ const projects = [
     {
         id: 1,
         title: 'Color Generator',
-        description: 'Suggest random color in different formats',
+        description: 'Suggest a random color and convert it into different formats',
         image: '1-color-generator/Screenshot.png',
         path: '1-color-generator/index.html',
         github: 'https://github.com/yassermuayed/fundamentals/tree/master/1-color-flipper'
@@ -11,7 +11,7 @@ const projects = [
     {
         id: 2,
         title: 'Stop Watch',
-        description: 'Fully functional stop watch.',
+        description: 'Fully functional stop watch.record labs to decimal precision.',
         image: '2-stop-watch/Screenshot.png',
         path: '2-stop-watch/index.html',
         github: 'https://github.com/yassermuayed/fundamentals/tree/master/2-stop-watch'
@@ -19,10 +19,18 @@ const projects = [
     {
         id: 3,
         title: 'Tic Tac Toe',
-        description: 'Tow player tic tac toe game',
+        description: 'Tow player tic tac toe game, best playable on mobile.',
         image: '3-tic-tac-toe/Screenshot.png',
         path: '3-tic-tac-toe/index.html',
         github: 'https://github.com/yassermuayed/fundamentals/tree/master/3-tic-tac-toe'
+    },
+    {
+        id: 4,
+        title: 'Calculator',
+        description: 'A simple mathematical calculator with basic operations.',
+        image: '4-calculator/Screenshot.png',
+        path: '4-calculator/index.html',
+        github: 'https://github.com/yassermuayed/fundamentals/tree/master/4-calculator'
     },
 ]
 
