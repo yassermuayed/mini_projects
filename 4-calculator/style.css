@@ -1,0 +1,57 @@
+body {
+    background-color: rgb(0, 22, 29);
+    display: flex;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+}
+
+.container {
+    width: 75%;
+
+}
+
+.screen {
+    background-color: gainsboro;
+    padding: 10px 15px;
+    border-radius: 15px;
+    min-height: 75px;
+
+}
+
+#keyboard {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    grid-auto-rows: minmax(10px, auto);
+
+}
+
+.first-row {
+    
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.second-row {
+    font-size: 1rem;
+    margin-left: 4px;
+    color: rgb(148, 148, 148);
+}
+
+.key {
+    /* width: 20px;
+    height: 20px; */
+    background-color: gainsboro;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+.key:hover {
+    cursor: grab;
+
+}
