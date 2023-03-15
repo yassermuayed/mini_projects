@@ -1,0 +1,135 @@
+:root {
+    font-size: 10px;
+    --gray-color: rgb(170, 170, 150); 
+}
+
+body {
+    background-color: rgb(26, 0, 171);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    outline: var(--gray-color) solid 12px;
+    background-color: black;
+    width: 35rem;
+    height: 35rem;
+    border-radius: 50%;
+    margin-top: 50px;
+    position: relative;
+}
+
+.clock:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: chocolate;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+    transform-origin: center;
+}
+
+
+
+
+
+.numbers {
+    border: dashed 4px var(--gray-color);
+    border-radius: 100%;
+    width: 30rem;
+    height: 30rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--gray-color);
+    font-size: 4rem;
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.o12 {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.o3 {
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+}
+
+.o6 {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.o9 {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+}
+
+
+.hand {
+    background-color: var(--gray-color);
+    width: 1rem;
+    height: 15rem;
+    position: absolute;
+    top: 50%;
+    left: 48%;
+    transform: translate(-50, -50);
+    transform-origin: top;
+    rotate: 180deg;
+    border-radius: 60px;
+}
+
+.hours {
+    height: 12em;
+    width: 1.5rem;
+}
+
+.minutes {
+    left: 49%;
+    background-color: chocolate;
+
+}
+
+.seconds {
+    left: 50%;
+    width: 0.4rem;
+    height: 16rem;
+
+}
+
+.controls {
+    text-align: center;
+}
+
+#range {
+    margin-top: 20px;
+    scale: 2;
+}
+
+#info {
+    color: white;
+    margin-bottom: 0;
+}
+
+#info2 {
+    color: white;
+    margin-top: 0;
+    font-size: 1.4rem;
+}
