@@ -2,7 +2,7 @@ console.log('working')
 const gameBoard = document.querySelector('#game-board')
 const info1 = document.querySelector('#info1')
 const info2 = document.querySelector('#info2')
-
+const playAgaenButton = document.querySelector('#play-again')
 const squares = [12, 13, 14, 15, 16, 17, 18, 19, 20]
 
 let turn = 1;
@@ -20,7 +20,7 @@ function clickHandler(event) {
             let circle = document.createElement('div')
             circle.classList.add('circle')
             event.target.appendChild(circle)
-            
+
             squares[event.target.id] = 1
             turn = 2;
         }
@@ -28,7 +28,7 @@ function clickHandler(event) {
             let cross = document.createElement('div')
             cross.classList.add('cross')
             event.target.appendChild(cross)
-            
+
             squares[event.target.id] = 2
             turn = 1;
         }
@@ -42,7 +42,7 @@ function clickHandler(event) {
 // //////////////////////////////////////////////////////////////////
 
 function checkWin(board) {
-    
+
     const winningCombos = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8], // horizontal
         [0, 3, 6], [1, 4, 7], [2, 5, 8], // vertical
@@ -54,11 +54,11 @@ function checkWin(board) {
 
         if (board[a] === board[b] && board[a] === board[c]) {
             gameState = 'gameover'
-            if (turn == 2){
+            if (turn == 2) {
                 info1.innerText = "Player 1 wins"
                 info2.innerText = "You lose :("
             }
-            if (turn == 1){
+            if (turn == 1) {
                 info2.innerText = "Player 2 wins"
                 info1.innerText = "You lose :("
             }
@@ -91,6 +91,11 @@ function createSquare(i) {
     return square;
 }
 
-function gameOver(){
-    
+function gameOver() {
+
 }
+
+
+playAgaenButton.addEventListener('click', () => {
+    location.reload()
+})
