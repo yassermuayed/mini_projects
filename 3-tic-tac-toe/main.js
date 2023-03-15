@@ -20,7 +20,8 @@ function clickHandler(event) {
             let circle = document.createElement('div')
             circle.classList.add('circle')
             event.target.appendChild(circle)
-
+            info2.innerText = "Your turn"
+            info1.innerText = "Wait"
             squares[event.target.id] = 1
             turn = 2;
         }
@@ -28,7 +29,8 @@ function clickHandler(event) {
             let cross = document.createElement('div')
             cross.classList.add('cross')
             event.target.appendChild(cross)
-
+            info1.innerText = "Your turn"
+            info2.innerText = "Wait"
             squares[event.target.id] = 2
             turn = 1;
         }
@@ -99,3 +101,7 @@ function gameOver() {
 playAgaenButton.addEventListener('click', () => {
     location.reload()
 })
+
+function updateInfo(turn){
+
+}
