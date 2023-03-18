@@ -1,8 +1,28 @@
+:root {
+    --color-1: #FF220826;
+    --color-2: #FFffffff;
+    --color-3: #FFf8a04b;
+    --color-4: #FF6d362b;
+    --color-5: #FFe13728;
+    --color-6: #FFf4ec64;
+    --color-7: #FF5f9633;
+    --color-8: #FF14473c;
+    --color-9: #FF27b05b;
+    --color-10: #FF6fe1c0;
+    --color-11: #FF199ace;
+    --color-12: #FF4a32ae;
+    --color-13: #FF8a898e;
+    --color-14: #FFffa1a8;
+    --color-15: #FFe14aa0;
+    --color-16: #FF4d1a65;
+}
+
 body {
-    background: goldenrod;
+    background: var(--color-15);
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 #container {
@@ -10,7 +30,7 @@ body {
     max-width: 360px;
     height: 90vh;
     max-height: 580px;
-    background-color: gray;
+    background-color: var(--color-12);
 
     display: flex;
     align-items: center;
@@ -20,8 +40,24 @@ body {
 #game-board {
     width: 100%;
     height: 100%;
-    background-color: salmon;
+    background-color: var(--color-8);
     display: grid;
+    align-items: center;
+    justify-content: space-evenly;
     grid-template-columns: 10;
     grid-template-rows: 24;
+    outline: solid 10px var(--color-8);
+    
+}
+
+.selected {
+    background-color: var(--color-15);
+    outline: solid 2px var(--color-14);
+    border-radius: 2px;
+    animation: selected duration timing-function delay iteration-count direction fill-mode;
+}
+
+.adjacent{
+    outline: solid 3px rgb(0, 108, 249);
+    border-radius: 2px;
 }
