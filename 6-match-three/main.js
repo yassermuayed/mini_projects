@@ -10,6 +10,7 @@ let level = localStorage.getItem('level');
 if (level === null) {
     level = 1;
     localStorage.setItem('level', level);
+
 }
 
 function createAndAppend(src, col, row) {
@@ -26,7 +27,7 @@ function createAndAppend(src, col, row) {
         row: row,
         strKey: col + '' + row
     }
-    animal.style.scale = 1.2;
+    animal.style.scale = 1;
 
     animal.addEventListener('click', (e) => {
         clickHandler(e, animal);
@@ -131,7 +132,7 @@ let selection = {
             })
             this.connectedTree.clear()
 
-            upDateGameBoard();
+            updateGameBoard();
         } else {
             this.connectedTree.forEach((el) => { el.classList.remove('adjacent') })
             this.connectedTree.clear();
@@ -143,38 +144,63 @@ let selection = {
 
 }
 
-function upDateGameBoard() {
-    // console.log(gameBoard.children)
-    let missingCells = [];
-    let colsWithMissing = [];
-    for (let key in aa) {
-        if (aa[key].classList.contains("removed")) {
-            missingCells.push(aa[key])
-        }
-    }
-
-    missingCells.forEach(el => {
-        if (!colsWithMissing.includes(el.position.col)) {
-            colsWithMissing.push(el.position.col)
-        }
-    })
-
+function updateGameBoard() {
     let arrFromGB = [...gameBoard.children]
+    let colsWithMissing = findColsWithMissing(arrFromGB)
 
-    let tempArr = [];
-    let missingRows = []
-    arrFromGB.forEach(el => {
-        if (el.position.col === colsWithMissing[0]){
-            tempArr.push(el)
-        }
-    })
-    for (let index = 12; index > 0; index--) {
-        if(tempArr[index].position.row === index) {
-            missingRows.push(tempArr[index])
-        }
+    function findColsWithMissing(gbArr) {
+        let tempArr = [0, 0, 0, 0, 0, 0, 0, 0];
+        let colsWithMissing = [];
+        gbArr.forEach((cell) => {
+            tempArr[cell.style.gridColumnStart - 1] += 1;
+        })
+        tempArr.forEach((el, index) => {
+            if (el < 12) {
+                colsWithMissing.push(index + 1)
+            }
+        })
+        return colsWithMissing;
     }
 
-    console.dir(tempArr)
+    function orderCol(colNum) {
+        // colNum = 1;
+        let remainingCells = [];
+        let missingCellsCount = 12 - remainingCells.length;
+        let lowestMissing = 12;
+
+        arrFromGB.forEach(el => {
+            if (el.style.gridColumnStart == colNum) {
+                remainingCells.push(el)
+            }
+        })
+
+        function addMissingFromTop() {
+            let lowest = 12;
+            for (let index = 0; index < 12; index++) {
+                let element = remainingCells[index];
+
+
+                if(index + 1  == element?.style.gridRowStart){
+                    console.log('ok ====')
+                }
+                
+                console.log(index, " ", element, element?.style.gridRowStart)
+
+            }
+
+            return lowest;
+        }
+        addMissingFromTop()
+
+        // console.log("col", colNum, ": ",remainingCells)
+    }
+    
+    colsWithMissing.forEach(el => {
+        orderCol(el)
+    })
+
+
+
 }
 
 
@@ -201,3 +227,4 @@ function newStart() {
 }
 
 newStart();
+
