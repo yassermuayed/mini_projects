@@ -40,6 +40,14 @@ const projects = [
         path: '5-analog-clock/index.html',
         github: 'https://github.com/yassermuayed/fundamentals/tree/master/5-analog-clock'
     },
+    {
+        id: 6,
+        title: 'Match-3 Game',
+        description: 'A prototype of a classic Match-3 game. Can you clear all the tasks?',
+        image: '6-match-three/Screenshot.png',
+        path: '6-match-three/index.html',
+        github: 'https://github.com/yassermuayed/fundamentals/tree/master/6-match-three'
+    },
 ]
 
 projects.forEach(el => createProject(el))
