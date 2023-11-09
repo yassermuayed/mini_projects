@@ -1,17 +1,22 @@
-const countDigit = document.getElementById("count-digit");
-const incButton = document.getElementById("increase");
-const decButton = document.getElementById("decrease");
-const phiButton = document.getElementById("phi");
+const getById = (idd) => document.getElementById(idd);
+
+const countDigit = getById("count-digit");
+const incButton = getById("increase");
+const decButton = getById("decrease");
+const phiButton = getById("phi");
+
 let counter = 0;
 
-countDigit.textContent = counter;
+document.body.addEventListener("click", () => {
+  countDigit.textContent = counter;
+});
 
 incButton.addEventListener("click", () => {
-  counter = addone()(counter);
+  counter = operation("add")(counter);
 });
 
 decButton.addEventListener("click", () => {
-  --counter;
+  counter = operation("sub")(counter);
 });
 
 // don't call the function
@@ -21,12 +26,21 @@ function reset() {
   counter = 0;
 }
 
-document.body.addEventListener("click", () => {
-  countDigit.textContent = counter;
-});
-
-function addone(pre) {
-  return function intake(pre) {
-    return pre + 1;
-  };
+function operation(op) {
+  switch (op) {
+    case "add":
+      return function (num) {
+        return ++num;
+      };
+      break;
+    case "sub":
+      return function (num) {
+        return --num;
+      };
+      break;
+    default:
+      break;
+  }
 }
+
+function animateText(node) {}
